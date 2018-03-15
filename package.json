@@ -1,0 +1,29 @@
+{
+  "name": "cozy-konnector-numericable",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cozy/cozy-konnector-numericable.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "dev": "cozy-konnector-dev",
+    "standalone": "cozy-konnector-standalone",
+    "build": "webpack",
+    "lint": "standard --fix konnector.js",
+    "deploy": "git-directory-deploy --directory build/ --branch build --repo=https://github.com/konnectors/cozy-konnector-numericable.git",
+    "deploy:prod": "git-directory-deploy --directory build/ --branch latest --repo=https://github.com/konnectors/cozy-konnector-numericable.git"
+  },
+  "dependencies": {
+    "cozy-konnector-libs": "^3.0.8"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
+    "git-directory-deploy": "^1.5.1",
+    "standard": "^10.0.2",
+    "webpack": "^2.5.1"
+  }
+}
