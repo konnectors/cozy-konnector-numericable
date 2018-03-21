@@ -27,6 +27,10 @@ function authenticate(params) {
     .then(appKey => fetchAccessToken(appKey, params))
     .catch(handleErrorAndTerminate.bind(this, 'LOGIN_FAILED'))
     .then(authenticateWithToken)
+    .then(() => {
+      log('info', 'Successfully logged in.')
+      return params
+    })
     .catch(handleErrorAndTerminate.bind(this, 'UNKNOWN_ERROR'))
 }
 
