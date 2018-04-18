@@ -6,6 +6,8 @@ env:
     # kosssi GITHUB_TOKEN
     # to generate yours : travis encrypt GITHUB_TOKEN=<your_GITHUB_TOKEN>
     - secure: "IIujjX9uSbvrGrFptM9LIOkLJK0vXB4aFI9nSwkkXIu329PJ9z5IOkEwRUZyW9YpRlGTc9alUs3BTcTegZwyZyDTsqVRuiqHILN3iFKmonMz++rWmRwMiNZskd6+29kUqMGJmuYcqSWZf074AJhsDv7cA9YXmsi5wwNZ2sgkrQ2eOJMBKmNOBYXGz5JEMiOBHu+/TcMHZjDJnsw15EloxNpdXMrV7Ix6w8bluQzkXye3bKsoM21kCzKXR9q5nbF8OoS1H/t6jVSDoAfY9vFnJlu6Nj1OMoFO7WAKsyqsxuvZ7NpRezfYOdC7PB29wwOyYrv7Ma1LOSJ2c7gs/CajISv4bqUQZwuy+YQJZ3QaAqRzkLu5UBVJTJetLzdDfqI/zrqlJMj7nuDlukhY3S45Zl+UiGDt9s7QDhLw1s0FKgXPw1uZMSeYxlx4pt3GN8s1hlM0Cf+a9lzn3sRdP3Ph6aMTSg8ZP70y3upj7n9wGCuFOmNwTr5AljlzKoT3w/iJ9ia9Toa08nLy9TRlSh0fOF4MWwiqwpukM/KMihyMx82dVGrEuP3FmqcdsD57w597bhLviv+xyzZAKcDL1p/DkWQLlkSftP89QhJeXuMVct2YrmlF5D0qkfjDpAwtHa8t3rhqcHAnErEvbvzt2sawLWayGM+YwKxmqcWM4cSHvPs="
+    # REGISTRY_TOKEN
+    - secure: dH2/9GA1NoVxflNaF4CYsX4FrJIZ8NX+IfaZX7lwJCPjgt6cLLLPSo3QYTzQ1R9ZHTxwwPSLYJZefZvLx3TmebH9mvjUd+sJ3xz1rNFveOCx3898Zg17d0swC9KqvzUHL2QZVKS32SHgnyupSF+adMGJEuNDK4D2X/N3IDATWUSjX1lp6gllgTH42zsa5YqxB+bQypCENr5wByDDt+Os1QfRLgHjhamEfU/ov8+M5MP/4UBHFH5VUmx+NZ94CQ7VNmP/0JL/prC8ZqCThuEXxmo8Ryd8NgUXFBmyPu8lr+pVHuLCruAoag/8wrHiVibw/zrF3NH+7OaQiFrJkheCgxcp4yV6ViRLOVGboUSRfV0W4iagDH3DWfRUaoQpluzQ10Fwhk9kbZ2vhdvopBhSocgLqlU+o7w/s5v4UYQRmZyKco7AoOEFaql9Qb0t68mmr5+W4zje10y9siwfrDf3kCdScSeZGCcjovgP1vUXotu2jyUdvWVuDN+4OKlVG58U6MfpYYiFM6nTwrvFjjtHp9MA3dKrtH6Oq2pdCyOb+kip1fnz1FH7CCsUgQnxOC912X2FJ4yLPDFGip9ylRGFvsnG69h1rKk3QtxPYj5Dq4LlVge9vI+40ux9M3KkoLiJj33zX1QBEtAuJQMRxZq6eVdv4TVIKWkBYJr46aq9HKE=
   matrix:
     # yannick account
     # to generate yours : travis encrypt KONNECTOR_CONFIG=\'"`cat konnector-dev-config.json | tr -d '\n'`"\' -r konnectors/cozy-konnector-numericable
@@ -19,15 +21,15 @@ script:
   - yarn build
   - if [ $TRAVIS_SECURE_ENV_VARS = "true" ]; then yarn test; fi
 deploy:
-  - provider: script
-    repo: konnectors/cozy-konnector-numericable
-    skip-cleanup: true
-    script: yarn deploy
-    on:
-      branch: master
-  - provider: script
-    repo: konnectors/cozy-konnector-numericable
-    skip-cleanup: true
-    script: yarn deploy:prod
-    on:
-      branch: prod
+- provider: script
+  repo: konnectors/cozy-konnector-numericable
+  skip-cleanup: true
+  script: DEPLOY_BRANCH=build && yarn deploy && yarn cozyPublish
+  on:
+    branch: master
+- provider: script
+  repo: konnectors/cozy-konnector-numericable
+  skip-cleanup: true
+  script: DEPLOY_BRANCH=build && yarn deploy && yarn cozyPublish
+  on:
+    tags: true
