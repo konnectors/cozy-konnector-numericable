@@ -1,33 +1,44 @@
 language: node_js
 node_js:
-  - '8'
+- '8'
 env:
   global:
-    # kosssi GITHUB_TOKEN
-    # to generate yours : travis encrypt GITHUB_TOKEN=<your_GITHUB_TOKEN>
-    - secure: "IIujjX9uSbvrGrFptM9LIOkLJK0vXB4aFI9nSwkkXIu329PJ9z5IOkEwRUZyW9YpRlGTc9alUs3BTcTegZwyZyDTsqVRuiqHILN3iFKmonMz++rWmRwMiNZskd6+29kUqMGJmuYcqSWZf074AJhsDv7cA9YXmsi5wwNZ2sgkrQ2eOJMBKmNOBYXGz5JEMiOBHu+/TcMHZjDJnsw15EloxNpdXMrV7Ix6w8bluQzkXye3bKsoM21kCzKXR9q5nbF8OoS1H/t6jVSDoAfY9vFnJlu6Nj1OMoFO7WAKsyqsxuvZ7NpRezfYOdC7PB29wwOyYrv7Ma1LOSJ2c7gs/CajISv4bqUQZwuy+YQJZ3QaAqRzkLu5UBVJTJetLzdDfqI/zrqlJMj7nuDlukhY3S45Zl+UiGDt9s7QDhLw1s0FKgXPw1uZMSeYxlx4pt3GN8s1hlM0Cf+a9lzn3sRdP3Ph6aMTSg8ZP70y3upj7n9wGCuFOmNwTr5AljlzKoT3w/iJ9ia9Toa08nLy9TRlSh0fOF4MWwiqwpukM/KMihyMx82dVGrEuP3FmqcdsD57w597bhLviv+xyzZAKcDL1p/DkWQLlkSftP89QhJeXuMVct2YrmlF5D0qkfjDpAwtHa8t3rhqcHAnErEvbvzt2sawLWayGM+YwKxmqcWM4cSHvPs="
+  - GH_USER_EMAIL="travis@example.org"
+  - GH_USER_NAME="cozy-bot"
+  - DEPLOY_REPOSITORY="git@github.com:konnectors/cozy-konnector-numericable.git"
+  - secure: IwFlWebIo6MKAftDCYevE5k+aOqAvVUlSSudd+ADaGYMwSGHlTcACL4djGpPiEBeuTv+AALxToGmTqNj2J3YZBfVyH8ausS9xVdHPC0N3e8N6oqjdxcSMDpoyQBV7CYdl5vBNLIiexpsGepTQWinPOM2bwcmLV6nUE1QY/62Jy0yfGOiMROE9RM3OvISKj87mAxXYoKQP9ySuIjhOWaAXrZDBDQ3GrtlDO3PHZ/RK9uX+JlzUyhtQ8C6dtR+ETx9Awzi2h17pVkkom20XqLsWuIS303nusB2BDDCYlAWY6qocfamyfNuhL6P2+FB2fSmTCCCkUZlsA8lCXxAyWu7fPhJW9YmlGwUzbo4fW3CUeODvykqZFyuRMJDBWIsAtTJHYoen2wE7Ly4v59rZjXyZw1sEbOtGU6UVFvRYB2+seJE3Kb5k/tRHH7P8JL4RayYRg8SbU5rKmGNuDMxrI6Y25fT9yK1TiO7q34PHS/OI0wszqdAFBvtlB3Yb6Kb9SatqQED+POJ1gsE0Ra7xiib9BmorFDP5WtxeWDHbKFWdOhT1Re8kXEApvl5KucztCJ9iuZWdkt9/pkK9DKpoo1FZI+6dBghzJhozvEgOum3uwjVUb0exFrZi7PY7BsBUV14PqIWLbbGVXAh/8ctXhCjyGqRkXXeDFmW3M+LlDTIV7w=
   matrix:
-    # yannick account
-    # to generate yours : travis encrypt KONNECTOR_CONFIG=\'"`cat konnector-dev-config.json | tr -d '\n'`"\' -r konnectors/cozy-konnector-numericable
-    - secure: "g/+SKk2jbSEnJ+UvGnkLOd/UURGVptgzDzJmWbJomUo65C6+wi6y+Mwd9vqW8p9y//iRD5dJluWGKo3+lnmCw9y5Mo3yJ9IoS6xgKhgU+luvXFwIXFOt9R4xJe+aNI5nLFjT3mybV5PXPMV4QoabYNFIaBm399cfTTgp/+DKOKib8IorMNpi1/aXsbzou1vgmz9Lcrq4IQ1PhZsLDP+bV15+DPPRMF96+msjk2AXnjhrc3aE5Ujv4UO2udi13f0Af/KwPK9jFopoG+Jzl32g1sBKOya21yoGZdODNYw2jZWjnbl+uiuVm1PEN8OWmkfMrdQTvP1V57myb7o6qNo1xbKejGwVO0CwbRHMK2fucSosReLExENOmPDGUDa+GriLy2UTziRNyA+PtpONc89YTAAmvdcLK9vTBRJcRBMic8CZoQXdZVBPGzdFFssFR3lA4fsDmBFYH1G4T4YHBsh4+oQFIF+DGEkfhSOBxC3N+vyqelnI6kCTWFhO7/YIRM3gY2BLVNz/GyAol7voKwvP0jaRPtAwAwDoF+uu6D20Anv6F6IFGjHFVHt3volOyB72k/bE8v0EtPLiDhSL/Cy5f5QO+suFCXajzBb7TNiC+q/kJVcTj3NPxeQ0FwaHfpzqAtNyXFs3mb35ws58K59zFg8FSRTbsa0uieZeuuxYV3s="
+  - secure: g/+SKk2jbSEnJ+UvGnkLOd/UURGVptgzDzJmWbJomUo65C6+wi6y+Mwd9vqW8p9y//iRD5dJluWGKo3+lnmCw9y5Mo3yJ9IoS6xgKhgU+luvXFwIXFOt9R4xJe+aNI5nLFjT3mybV5PXPMV4QoabYNFIaBm399cfTTgp/+DKOKib8IorMNpi1/aXsbzou1vgmz9Lcrq4IQ1PhZsLDP+bV15+DPPRMF96+msjk2AXnjhrc3aE5Ujv4UO2udi13f0Af/KwPK9jFopoG+Jzl32g1sBKOya21yoGZdODNYw2jZWjnbl+uiuVm1PEN8OWmkfMrdQTvP1V57myb7o6qNo1xbKejGwVO0CwbRHMK2fucSosReLExENOmPDGUDa+GriLy2UTziRNyA+PtpONc89YTAAmvdcLK9vTBRJcRBMic8CZoQXdZVBPGzdFFssFR3lA4fsDmBFYH1G4T4YHBsh4+oQFIF+DGEkfhSOBxC3N+vyqelnI6kCTWFhO7/YIRM3gY2BLVNz/GyAol7voKwvP0jaRPtAwAwDoF+uu6D20Anv6F6IFGjHFVHt3volOyB72k/bE8v0EtPLiDhSL/Cy5f5QO+suFCXajzBb7TNiC+q/kJVcTj3NPxeQ0FwaHfpzqAtNyXFs3mb35ws58K59zFg8FSRTbsa0uieZeuuxYV3s=
 cache:
   yarn: true
   directories:
-    - node_modules
+  - node_modules
 script:
-  - yarn lint
-  - yarn build
-  - if [ $TRAVIS_SECURE_ENV_VARS = "true" ]; then yarn test; fi
+- yarn lint
+- yarn build
+- if [ $TRAVIS_SECURE_ENV_VARS = "true" ]; then yarn test; fi
 deploy:
-  - provider: script
-    repo: konnectors/cozy-konnector-numericable
-    skip-cleanup: true
-    script: yarn deploy
-    on:
-      branch: master
-  - provider: script
-    repo: konnectors/cozy-konnector-numericable
-    skip-cleanup: true
-    script: yarn deploy:prod
-    on:
-      branch: prod
+- provider: script
+  skip-cleanup: true
+  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
+  on:
+    branch: master
+- provider: script
+  skip-cleanup: true
+  script: DEPLOY_BRANCH=latest yarn deploy
+  on:
+    branch: prod
+- provider: script
+  skip-cleanup: true
+  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
+  on:
+    tags: true
+before_install:
+- openssl aes-256-cbc -K $encrypted_5ac8eb3c5228_key -iv $encrypted_5ac8eb3c5228_iv
+  -in github_deploy_key.enc -out /tmp/github_deploy_key -d
+- eval "$(ssh-agent -s)"
+- chmod 600 /tmp/github_deploy_key
+- ssh-add /tmp/github_deploy_key
+after_deploy:
+- rm /tmp/github_deploy_key
+- ssh-add -D
