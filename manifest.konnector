@@ -5,7 +5,7 @@
   "language": "node",
   "icon": "numericable.svg",
   "slug": "numericable",
-  "source": "git://github.com/konnectors/cozy-konnector-numericable.git#build",
+  "source": "git://github.com/konnectors/cozy-konnector-numericable.git",
   "editor": "Cozy",
   "vendor_link": "https://www.numericable.fr/",
   "categories": ["isp"],
@@ -60,5 +60,6 @@
       "short_description": "Fetch your Numericable data in your Cozy",
       "long_description": "This provider will allow you to fetch all your Numericable factures in your Cozy."
     }
-  }
+  },
+  "manifest_version": "2"
 }
