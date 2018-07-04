@@ -61,5 +61,6 @@
       "long_description": "This provider will allow you to fetch all your Numericable factures in your Cozy."
     }
   },
+  "banksTransactionRegExp": "\\bnumericable\\b",
   "manifest_version": "2"
 }
