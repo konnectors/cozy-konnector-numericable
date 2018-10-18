@@ -1,0 +1,72 @@
+{
+  "version": "1.2.0",
+  "name": "Numéricable",
+  "type": "konnector",
+  "language": "node",
+  "icon": "numericable.png",
+  "slug": "numericable",
+  "source": "git://github.com/konnectors/cozy-konnector-numericable.git",
+  "editor": "Cozy",
+  "vendor_link": "https://www.numericable.fr/",
+  "categories": [
+    "isp"
+  ],
+  "fields": {
+    "login": {
+      "type": "text"
+    },
+    "password": {
+      "type": "password"
+    },
+    "advancedFields": {
+      "folderPath": {
+        "advanced": true,
+        "isRequired": false
+      }
+    }
+  },
+  "data_types": [
+    "bill"
+  ],
+  "screenshots": [],
+  "permissions": {
+    "bank": {
+      "description": "Required to link bills to a bank operation",
+      "type": "io.cozy.bank.operations"
+    },
+    "bills": {
+      "description": "Required to save the bills data",
+      "type": "io.cozy.bills"
+    },
+    "files": {
+      "description": "Required to save the bills",
+      "type": "io.cozy.files"
+    },
+    "accounts": {
+      "description": "Required to get the account's data",
+      "type": "io.cozy.accounts",
+      "verbs": [
+        "GET"
+      ]
+    }
+  },
+  "developer": {
+    "name": "Cozy Cloud",
+    "url": "https://cozy.io"
+  },
+  "langs": [
+    "fr"
+  ],
+  "locales": {
+    "fr": {
+      "short_description": "Récupérer vos données Numericable dans votre Cozy",
+      "long_description": "Ce fournisseur vous permettra de récupérer l'ensemble de vos factures Numericable dans votre Cozy."
+    },
+    "en": {
+      "short_description": "Fetch your Numericable data in your Cozy",
+      "long_description": "This provider will allow you to fetch all your Numericable factures in your Cozy."
+    }
+  },
+  "banksTransactionRegExp": "\\bnumericable\\b",
+  "manifest_version": "2"
+}
