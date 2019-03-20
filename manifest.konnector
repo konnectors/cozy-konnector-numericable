@@ -5,7 +5,7 @@
   "language": "node",
   "icon": "numericable.png",
   "slug": "numericable",
-  "source": "git://github.com/konnectors/cozy-konnector-numericable.git",
+  "source": "git@github.com:konnectors/cozy-konnector-numericable.git",
   "editor": "Cozy",
   "vendor_link": "https://www.numericable.fr/",
   "categories": [
