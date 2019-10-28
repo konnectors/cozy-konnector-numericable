@@ -3,7 +3,7 @@
   "name": "Numéricable",
   "type": "konnector",
   "language": "node",
-  "icon": "numericable.png",
+  "icon": "icon.svg",
   "slug": "numericable",
   "source": "git@github.com:konnectors/cozy-konnector-numericable.git",
   "editor": "Cozy",
