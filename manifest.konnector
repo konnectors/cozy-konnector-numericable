@@ -1,11 +1,11 @@
 {
-  "version": "1.1.2",
+  "version": "1.2.0",
   "name": "Numéricable",
   "type": "konnector",
   "language": "node",
   "icon": "icon.svg",
   "slug": "numericable",
-  "source": "git://github.com/konnectors/cozy-konnector-numericable.git",
+  "source": "git@github.com:konnectors/cozy-konnector-numericable.git",
   "editor": "Cozy",
   "vendor_link": "https://www.numericable.fr/",
   "categories": [
